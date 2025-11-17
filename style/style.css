@@ -1,0 +1,221 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-shadow: border-box;
+}
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  background-color: #f4f4f9;
+  color: #333;
+}
+/*--- Стили для ссылок по умолчанию ---*/
+a {
+  color: #007bff;
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}
+/*--- Установим контейнер для ограничения ширины контента ---*/
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+/*--- Стили для Header ---*/
+header {
+  background-color: #333;
+  color: white;
+  padding: 15px 0;
+}
+.header-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+header h1 {
+  font-size: 1.8em;
+}
+header nav a {
+  color: white;
+  margin-left: 20px;
+  font-weight: bold;
+  transition: color 0.3s;
+}
+header nav a:hover {
+  color: #007bff;
+  text-decoration: none;
+}
+/*--- Общие стили для секций ---*/
+section {
+  padding: 60px 0;
+}
+section h2 {
+  text-align: center;
+  margin-bottom: 40px;
+  font-size: 2.5em;
+  color: #333;
+}
+/*--- Стилизация Grid-сетки для проектов ---*/
+.projects-grid {
+  display: grid;
+  /*--- Создаем 3 колонки одинаковой ширины ---*/
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+/*--- Стилизация Карточки Проекта ---*/
+.project-card {
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: transform 0.3s;
+}
+.project-card:hover {
+  transform: translateY(-5px);
+}
+.card-image-placeholder {
+  height: 200px;
+  background-color: #e0e0e0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #555;
+  font-weight: bold;
+  font-size: 0.9em;
+}
+.card-content {
+  padding: 20px;
+}
+.card-content h3 {
+  margin-bottom: 10px;
+  color: #007bff;
+}
+.technologies span {
+  display: inline-block;
+  background-color: #e9ecef;
+  color: #495057;
+  font-size: 0.8em;
+  padding: 4px 8px;
+  border-radius: 4px;
+  margin-right: 5px;
+  margin-bottom: 10px;
+}
+/*--- Стили для кнопок-ссылок ---*/
+.card-links a {
+  padding: 8px 15px;
+  border-radius: 4px;
+  display: inline-block;
+  margin-right: 10px;
+  font-weight: bold;
+  text-decoration: none;
+  transition: background-color 0.3s;
+}
+.btn-primary {
+  background-color: #007bff;
+  color: white;
+  border: 1px solid #007bff;
+}
+.btn-primary:hover {
+  background-color: #0056b3;
+  text-decoration: none;
+}
+/*--- Секция Обо мне ---*/
+.about-content {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+}
+.about-content h2 {
+  font-size: 2.8em;
+  margin-bottom: 20px;
+  color: #007bff;
+}
+.about-content p {
+  margin-bottom: 15px;
+  font-size: 1.1em;
+}
+.skills {
+  margin-top: 40px;
+  padding: 20px;
+  border-top: 1px solid #ddd;
+}
+.skills h3 {
+  margin-bottom: 15px;
+  font-size: 1.5em;
+  color: #333;
+}
+.skills-list span {
+  display: inline-block;
+  background-color: #007bff;
+  color: white;
+  font-weight: bold;
+  padding: 8px 15px;
+  border-radius: 20px;
+  margin: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+/*--- Footer ---*/
+footer {
+  background-color: #333;
+  color: white;
+  padding: 20px 0;
+  text-align: center;
+  border-top: 5px solid #007bff;
+}
+footer .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+footer p {
+  margin: 5px 0;
+}
+footer a {
+  color: white;
+  transition: color 0.3s;
+}
+footer a:hover {
+  color: #007bff;
+}
+/*============================================================*/
+/*--- Media Queries ---*/
+/*--- Адаптация для Планшетов (Ширина экрана до 660px) ---*/
+@media (max-width: 675px) {
+  .projects-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  /*--- Уменьшаем отступы и размер шрифтов для компактности ---*/
+  section {
+    padding: 40px 0;
+  }
+  header h1 {
+    font-size: 1.5em;
+  }
+}
+/*--- Адаптация для телефонов (ширина экрана до 576px) ---*/
+@media (max-width: 576px) {
+  /*--- Меняем сетку проектов на 1 колонку, чтобы карточки были во всю ширину ---*/
+  .projects-grid {
+    grid-template-columns: 1fr;
+  }
+  /*--- Изменяем шапку, чтобы элементы не слипались ---*/
+  .header-content {
+    flex-direction: column;
+    text-align: center;
+  }
+  header h1 {
+    margin-bottom: 10px;
+  }
+  header nav a {
+    margin: 0 10px;
+  }
+  footer .container {
+    flex-direction: column;
+  }
+  .footer-links {
+    margin-top: 10px;
+  }
+}
